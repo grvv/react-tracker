@@ -63,11 +63,15 @@ class Dashboard extends Component {
 
   getAwbDetails = () => {
     const { currentPage } = this.state;
-    const url = `track/user?page=${currentPage}`;
+    const url = `my-awb?page=${currentPage}`;
+
+    console.log(url);
 
     awbTrackerApi
       .get(url)
       .then(({ data: response }) => {
+        console.log("responseeeee", response);
+
         if (response.success) {
           const { tracking: awbList, total_awb, per_page } = response;
           let totalPages = 0;
@@ -152,7 +156,6 @@ class Dashboard extends Component {
   };
 
   addTrackingDetails = async formValue => {
-
     const { alert } = this.props;
     alert.info("Adding Tracking Details! Please wait...", { timeout: 1000 });
     const request = await awbTrackerApi.post("edit-awb", formValue);

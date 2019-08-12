@@ -10,7 +10,7 @@ class SearchComponent extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state.awbNumber);
+    this.props.fetachAwb(this.state.awbNumber);
   };
 
   render() {

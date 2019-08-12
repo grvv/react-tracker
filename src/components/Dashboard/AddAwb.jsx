@@ -14,7 +14,7 @@ class AddEditAwb extends Component {
   };
 
   handleSubmit = () => {
-    const searchString = this.props.location.search;
+    const searchString = this.props.location && this.props.location.search;
 
     if (searchString) {
       let awbNo = "";

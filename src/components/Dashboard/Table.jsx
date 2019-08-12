@@ -14,8 +14,8 @@ const AWBTable = ({ headers, data, history, deleteAwb }) => {
         {data.map((data, index) => (
           <tr key={`${data}+${index}`}>
             <th>{index + 1}</th>
-            <td>{data.courierCompany}</td>
             <td>{data.awbNo}</td>
+            <td>{data.courierCompany}</td>
             <td>{data.status}</td>
             <td>
               <button

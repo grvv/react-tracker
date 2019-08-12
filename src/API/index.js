@@ -5,7 +5,7 @@ const instance = axios.create({
 });
 
 const checkUrl = url => {
-  const excludedEndpoints = ["login", "register"];
+  const excludedEndpoints = ["login", "register", "track"];
 
   return !excludedEndpoints.reduce(
     (acc, curr) => acc || url.indexOf(curr) !== -1,
